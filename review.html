@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Review</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f0f0; }
+        .gallery { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
+        .card { background: white; padding: 10px; border-radius: 8px; text-align: center; width: 200px; }
+        .card img { max-width: 100%; max-height: 250px; object-fit: contain; }
+        .filename { font-size: 12px; margin-top: 10px; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+    <h2>Image Review</h2>
+    <div class="gallery">
+        <!-- We will inject images here -->
+    </div>
+    <script>
+        const picsDir = "/Users/ammarmustafa/Downloads/PICS";
+        const files = [
+            "Screenshot 2026-07-09 at 1.10.46 AM.png",
+            "Screenshot 2026-07-09 at 1.11.59 AM.png",
+            "Screenshot 2026-07-09 at 1.12.44 AM.png",
+            "Screenshot 2026-07-09 at 1.13.55 AM.png",
+            "Screenshot 2026-07-09 at 1.15.20 AM.png",
+            "Screenshot 2026-07-09 at 1.16.39 AM.png",
+            "Screenshot 2026-07-09 at 1.17.57 AM.png",
+            "Screenshot 2026-07-09 at 1.18.19 AM.png",
+            "Screenshot 2026-07-09 at 1.20.06 AM.png",
+            "Screenshot 2026-07-09 at 1.20.29 AM.png",
+            "Screenshot 2026-07-09 at 1.20.58 AM.png",
+            "WhatsApp Image 2026-07-09 at 00.04.53 (1).jpeg",
+            "WhatsApp Image 2026-07-09 at 00.04.53 (2).jpeg",
+            "WhatsApp Image 2026-07-09 at 00.04.54 (1).jpeg",
+            "WhatsApp Image 2026-07-09 at 00.04.54 (2).jpeg",
+            "WhatsApp Image 2026-07-09 at 00.04.54.jpeg",
+            "WhatsApp Image 2026-07-09 at 00.04.55 (1).jpeg",
+            "WhatsApp Image 2026-07-09 at 00.04.55.jpeg",
+            "WhatsApp Image 2026-07-09 at 00.04.56 (1).jpeg",
+            "WhatsApp Image 2026-07-09 at 00.04.56 (2).jpeg",
+            "WhatsApp Image 2026-07-09 at 00.04.56.jpeg"
+        ];
+        
+        const gallery = document.querySelector('.gallery');
+        files.forEach((f, i) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div style="font-weight:bold; margin-bottom:5px;">ID: ${i}</div>
+                <img src="file://${picsDir}/${f}" />
+                <div class="filename">${f}</div>
+            `;
+            gallery.appendChild(card);
+        });
+    </script>
+</body>
+</html>
